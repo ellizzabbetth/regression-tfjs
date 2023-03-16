@@ -61,6 +61,13 @@ class LinearRegression {
         }
     }
 
+    predict(observations) {
+        // [
+        //     [horsepower, weights, displacement]            
+        // ]
+        return this.processFeatures(observations).matMul(this.weights);
+    }
+
     test(testFeatures, testLabels) {
         testFeatures =  this.processFeatures(testFeatures);//tf.tensor(testFeatures);
         testLabels = tf.tensor(testLabels);

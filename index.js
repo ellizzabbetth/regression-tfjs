@@ -33,3 +33,8 @@ plot({
 
 console.log('r2 is: ', r2)
 //  console.log('Updated M is: ', regression.weights.get(1,0), "Updated B is: ", regression.weights.get(0,0));
+
+regression.predict([
+    [120, 2, 380],
+    
+]).print()

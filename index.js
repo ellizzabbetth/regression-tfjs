@@ -16,7 +16,8 @@ console.log(features, labels)
 
 const regression = new LinearRegression(features, labels, {
     iterations: 100,
-    learningRate: 0.1
+    learningRate: 0.1,
+    batchSize: 10
 })
 
 regression.features.print(); 
@@ -25,9 +26,8 @@ regression.train();
 const r2 = regression.test(testFeatures, testLabels)
 
 plot({
-    x: regression.bHistory,
-    y: regression.mseHistory.reverse(),
-    xLabel: 'Value of B',
+    x: regression.mseHistory.reverse(),
+    xLabel: 'Iteration #',
     yLabel: 'Mean Square Error'
 })
 

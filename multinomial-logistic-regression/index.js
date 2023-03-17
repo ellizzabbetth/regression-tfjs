@@ -5,7 +5,7 @@ const plot = require('node-remote-plot');
 const _ = require('lodash');
 const mnist = require('mnist-data');
 
-const mnistData = mnist.training(0, 1000);
+const mnistData = mnist.training(0, 5000);
 
 
 const features = mnistData.images.values.map(image => _.flatMap(image))
@@ -23,7 +23,7 @@ console.log(encodedLabels)
 
 const regression = new LogisticRegression(features, encodedLabels, {
     learningRate: 1,
-    iterations: 5,
+    iterations: 20,
     batchSize: 100
 })
 

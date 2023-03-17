@@ -77,7 +77,7 @@ class LogisticRegression {
 
   processFeatures(features) {
     features = tf.tensor(features);
-
+    
     if (this.mean && this.variance) {
       features = features.sub(this.mean).div(this.variance.pow(0.5));
     } else {
